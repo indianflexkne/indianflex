@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Flex - Kishanganj | Premium B2B Printing Hub</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;700;800&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&family=Poppins:wght=400;700;800&family=Noto+Sans+Devanagari:wght=400;700&family=Noto+Nastaliq+Urdu:wght=400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -45,7 +45,8 @@
         }
         .lang-ur .nav-container, 
         .lang-ur .contact-flex,
-        .lang-ur .policy-card h3 {
+        .lang-ur .policy-card h3,
+        .lang-ur .facility-display {
             direction: rtl;
         }
 
@@ -111,7 +112,6 @@
             color: var(--indian-saffron);
         }
 
-        /* भाषा बदलने वाले बटन की स्टाइल */
         .lang-switcher {
             display: flex;
             gap: 5px;
@@ -237,28 +237,46 @@
             font-size: 15px;
         }
 
+        /* Portrait Image Optimized Layout */
         .facility-display {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .facility-img-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f1f5f9;
         }
 
         .facility-img {
             width: 100%;
-            height: auto;
-            max-height: 500px;
+            height: 100%;
+            max-height: 550px;
             object-fit: cover;
             display: block;
+            aspect-ratio: 3 / 4; /* Portrait Aspect Ratio */
         }
 
         .facility-desc {
-            padding: 35px;
+            padding: 50px;
             color: var(--text-main);
-            font-size: 16px;
-            text-align: center;
-            font-weight: 600;
-            border-top: 1px solid var(--border-color);
+            font-size: 18px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .lang-ur .facility-desc {
+            text-align: right;
         }
 
         .contact-flex {
@@ -337,6 +355,9 @@
             .contact-flex { grid-template-columns: 1fr; gap: 40px; }
             .hero-content h1 { font-size: 38px; }
             .hero-content h1 span { font-size: 28px; }
+            .facility-display { grid-template-columns: 1fr; max-width: 500px; }
+            .facility-desc { padding: 30px; text-align: center; }
+            .lang-ur .facility-desc { text-align: center; }
         }
 
         @media (max-width: 650px) {
@@ -394,7 +415,7 @@
             </div>
             <div class="policy-card">
                 <h3 id="card3-title">⚖️ स्प्लिट प्राइसिंग नियम</h3>
-                <p id="card3-desc">बाहर से सीधे आने वाले रिटेल ग्राहकों के लिए मार्केट का सामान्य रेट लागू होता है। हम आपके प्रॉफिट मार्जिन की रक्षा करते हैं, अपने पार्टनर्स से कभी कम्पीट नहीं करते।</p>
+                <p id="card3-desc">बाहर से सीधे आने वाले रिटेल ग्राहकों के लिए卸 मार्केट का सामान्य रेट लागू होता है। हम आपके प्रॉफिट मार्जिन की रक्षा करते हैं, अपने पार्टनर्स से कभी कम्पीट नहीं करते।</p>
             </div>
         </div>
     </section>
@@ -403,9 +424,11 @@
         <div class="container">
             <h2 class="section-title" id="sec2-title">हमारी प्रिंटिंग यूनिट</h2>
             <div class="facility-display">
-                <img src="assets/shop-front-photo.jpg" alt="Indian Flex Workshop" class="facility-img">
+                <div class="facility-img-wrapper">
+                    <img src="assets/shop-front-photo.jpg" alt="Indian Flex Workshop" class="facility-img">
+                </div>
                 <div class="facility-desc">
-                    <p id="facility-text" style="color: var(--primary-navy);">हाई-स्पीड, वाइड-फॉर्मेट फ्लेक्स प्रिंटिंग मशीनों और हैवी प्रोसेसिंग टूल्स से लैस, ताकि आपको सही समय पर एकदम सटीक और ब्राइट कलर्स मिलें।</p>
+                    <p id="facility-text" style="color: var(--primary-navy); font-weight: 600;">हाई-स्पीड, वाइड-फॉर्मेट फ्लेक्स प्रिंटिंग मशीनों और हैवी प्रोसेसिंग टूल्स से लैस, ताकि आपको सही समय पर एकदम सटीक और ब्राइट कलर्स मिलें।</p>
                 </div>
             </div>
         </div>
@@ -439,7 +462,7 @@
                 </div>
 
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?q=Kishanganj&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.0325507671914!2d87.94247957511877!3d26.09785609463374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e517aa3b1c7cb9%3A0x528c26eed8442b7e!2sIndian%20Flex!5e0!3m2!1sen!2sin!4v1781432064412!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
             </div>
@@ -489,17 +512,15 @@
                 card2Title: "⚡ ایڈوانس انفراسٹرکچر", card2Desc: "ہماری پرنٹنگ یونٹ بڑے آرڈرز کو بہت کم وقت میں تیار کرنے کی صلاحیت رکھتی ہے۔ ہنگامی آرڈرز کے لیے ہم رات بھر پرنٹنگ کی سہولت بھی دیتے ہیں۔",
                 card3Title: "⚖️ قیمتوں کا اصول", card3Desc: "براہ راست آنے والے ریٹیل صارفین کے لیے مارکیٹ کا عام ریٹ لاگو ہوتا ہے۔ ہم آپ کے منافع کا تحفظ کرتے ہیں۔",
                 sec2Title: "ہماری پرنٹنگ یونٹ", facilityText: "ہائی اسپیڈ، وائڈ فارمیٹ فلیکس پرنٹنگ مشینوں سے لیس، تاکہ آپ کو صحیح وقت پر درست اور چمکدار رنگ ملیں۔",
-                sec3Title: "ہم سے جڑیں", infoLoc: "📍 پریس کا پتہ", infoEmail: "📧 آفیشل ای میل", infoPhone: "📞 ہیلپ لائن / ڈائریکٹ کال", infoSocial: "🌐 سوشل میڈیا ہینڈلز",
+                sec3Title: "ہم سے جڑیں", infoLoc: "📍 پریس کا پتہ", infoEmail: "📧 آفیشل ای میل", infoPhone: "📞 ہیلپ لائن / ڈائیریکٹ کال", infoSocial: "🌐 سوشل میڈیا ہینڈلز",
                 footerText: "© 2026 انڈین فلیکس پرنٹنگ پریس، کشن گنج، بہار۔ جملہ حقوق محفوظ ہیں۔"
             }
         };
 
         function switchLang(lang) {
-            // एक्टिव बटन क्लास बदलें
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // उर्दू के लिए RTL (Right to Left) लेआउट और फोंट चेंज करें
             const rootHtml = document.getElementById('root-html');
             if (lang === 'ur') {
                 rootHtml.className = "lang-ur";
@@ -510,7 +531,6 @@
                 document.body.style.fontFamily = lang === 'hi' ? "'Noto Sans Devanagari', sans-serif" : "'Inter', sans-serif";
             }
 
-            // टेक्स्ट बदलें
             document.getElementById('nav-about').innerText = data[lang].navAbout;
             document.getElementById('nav-facility').innerText = data[lang].navFacility;
             document.getElementById('nav-contact').innerText = data[lang].navContact;
